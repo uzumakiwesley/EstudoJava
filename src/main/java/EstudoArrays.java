@@ -58,6 +58,6 @@ public class EstudoArrays {
         Integer numero2 = 1;
         Double nota3 = 1.0;
         Long pop2 = 1L;
-        Boolean teste2 = false.
+        Boolean teste2 = false;
     }
 }
