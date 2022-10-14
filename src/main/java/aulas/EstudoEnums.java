@@ -1,4 +1,4 @@
-// Enums são estruturas com constantes definidas
+package aulas;// Enums são estruturas com constantes definidas
 // Dias da semana, Meses do ano, Turnos do dia, Estações
 // Níveis (junior, pleno, senior), Feriados nacionais, Nipes do baralho
 

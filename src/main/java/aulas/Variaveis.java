@@ -1,3 +1,5 @@
+package aulas;
+
 public class Variaveis {
     // Execução do nosso programa JAVA
     public static void main(String[] args) {
