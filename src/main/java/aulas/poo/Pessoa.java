@@ -1,5 +1,7 @@
 package aulas.poo;
 
+import java.util.ArrayList;
+
 public class Pessoa {
     // Propriedades/atributos de uma pessoa
     String nome;
@@ -7,6 +9,8 @@ public class Pessoa {
     int idade;
     double altura;
     double peso;
+
+    ArrayList<Pessoa> conhecidos = new ArrayList<>();
 
     Pessoa() { // construtor da classe
         //this => representa o objeto
@@ -24,6 +28,8 @@ public class Pessoa {
         this.idade = idade;
         this.altura = altura;
         this.peso = peso;
+        this.dizOla();
+
     }
 
     Pessoa(String nome, String sobrenome) {
@@ -38,7 +44,7 @@ public class Pessoa {
     // Ações de uma pessoa (método)
     // <tipo_retorno> nomeDoMetodo(parametros) {}
     void dizOla() { // método
-        System.out.println("Olá, tudo bem? ");
+        System.out.println("Olá, tudo bem? meu nome é " + this.nome);
     }
 
     void mostrarImc() {
@@ -51,7 +57,30 @@ public class Pessoa {
         return imc;
     }
 
-    void comer() {
+    void comer(String comida) {
+        System.out.println("estou comendo " + comida);
+        this.peso =+ 1.5;
+    }
+
+    void cumprimentar(Pessoa pessoa) {
+        this.dizOla();
+        pessoa.dizOla();
+
+        if(!this.conhecePessoa(pessoa)) {
+           this.addPessoaNova(pessoa);
+           pessoa.addPessoaNova(this);
+        }
+    }
+
+    void addPessoaNova(Pessoa pessoa) {
+        System.out.println(this.nome + " conheceu " + pessoa.nome + "!!!");
+        this.conhecidos.add(pessoa);
+    }
+
+    boolean conhecePessoa(Pessoa pessoa){
+        // se true, a pessoa (this)c onhece a pessoa
+        // se false, não conhece a pessoa
+        return this.conhecidos.contains(pessoa);
 
     }
 }
